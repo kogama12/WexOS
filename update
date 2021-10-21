@@ -1,1 +1,33 @@
+@echo off
+set updateforge=no
 set updatever=2.0
+set version=<version.dat
+if NOT %updatever%==%version% (goto startupdate)
+goto close
+:startupdate
+cls
+color 30
+echo Yeni bir wex surumu bulunmakta!
+echo.
+echo.
+echo.
+echo WexOS %updatever% Surumunu Yuklemek Istiyormusunuz? (evet/hayir)
+set /p cvb=
+if %cvb%==evet (goto updateevet)
+if %cvb%==hayir (goto updatehayir)
+goto startupdate
+
+:updateevet
+cls
+start wexos.bat
+pause
+exit
+goto close
+:updatehayir
+if %updateforge%==yes (
+   echo Guncelleme tum wex kullanicilari icin zorunludur lutfen guncelleme yapin!
+   goto startupdate
+)
+goto close
+
+:close
