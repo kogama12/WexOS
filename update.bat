@@ -1,2 +1,2 @@
-set lastedwexver=3.0
-set lastedwexdver=3.0.10
+set /A "lastedwexver=3.0"
+set /A "lastedwexdver=3.0.10"
